@@ -10,6 +10,12 @@ Create a mimic of the class api that can store blogs and return them. It has the
 * GET /api/posts/:postID returns the post found at postID
 * DELETE /api/posts/:postID deletes the post found at postID
 
+# Run it 
+1. ```mongod``` to start the database itself.  Can also run ```mongod &``` to run in the background. 
+2. ```mongo``` if you want to interact from terminal with the database. 
+3. ```yarn dev``` to run the server on the local port. 
+
+
 # What Worked/What Didn't
 ## Worked 
 What it is rn. At least as far as I can tell. 
