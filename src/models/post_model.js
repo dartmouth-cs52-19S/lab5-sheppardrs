@@ -1,6 +1,8 @@
 import mongoose, { Schema } from 'mongoose';
 
 const PostSchema = new Schema({
+  author: { type: Schema.Types.ObjectId, ref: 'User' },
+  authorName: String,
   title: String,
   tags: String,
   cover_url: String,

@@ -4,7 +4,11 @@ import cors from 'cors';
 import path from 'path';
 import morgan from 'morgan';
 import mongoose from 'mongoose';
+import dotenv from 'dotenv';
 import apiRouter from './router';
+
+dotenv.config({ silent: true });
+// console.log('KEY: ', process.env.AUTH_SECRET); // checking key
 
 // DB Setup
 const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost/blogFoco';

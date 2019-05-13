@@ -7,6 +7,11 @@ export const createPost = (req, res) => {
   post.tags = req.body.tags;
   post.cover_url = req.body.cover_url;
   post.content = req.body.content;
+  post.author = req.user;
+  post.authorName = req.user.username;
+  console.log(req.user.username);
+  console.log(req.user);
+
   post.save()
     .then((result) => {
       res.json(result);
@@ -41,6 +46,7 @@ export const getPost = (req, res) => {
 };
 
 export const deletePost = (req, res) => {
+  console.log('in DELETE post');
   Post.deleteOne({ _id: req.params.id })
     .then((result) => {
       res.json(result);
@@ -58,6 +64,7 @@ export const updatePost = (req, res) => {
       post.tags = req.body.tags;
       post.content = req.body.content;
       post.cover_url = req.body.cover_url;
+      post.author = req.user; // update the author to whoever new person is
       // eslint-disable-next-line arrow-body-style
       post.save().then(result => res.json(result));
     })
