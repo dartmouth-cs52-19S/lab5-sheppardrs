@@ -3,12 +3,14 @@
 Sheppard Somers May 2019
 
 # Goal
-Create a mimic of the class api that can store blogs and return them. It has the paths: 
+Create a mimic of the class api that can store blogs and return them. It also has user sign in and creation. It has the paths: 
 * GET /api/posts/ returns only title and tags for all posts [[{"id":"",title":"","tags":""},...]
 * POST /api/posts/ with post parameters {'title', 'tags', 'content'} creates a new post
 * PUT /api/posts/:postID with parameters {'title', 'tags', 'content'} will update an entry
 * GET /api/posts/:postID returns the post found at postID
 * DELETE /api/posts/:postID deletes the post found at postID
+* POST /api/signup signs up a user with email, username, password
+* POST /api/signin sign in a user with email, username and password
 
 # Run it 
 1. ```mongod``` to start the database itself.  Can also run ```mongod &``` to run in the background. 
